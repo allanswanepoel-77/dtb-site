@@ -1,6 +1,9 @@
 {
   "name": "dtb-site",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  }
   "version": "0.0.0",
   "type": "module",
   "scripts": {

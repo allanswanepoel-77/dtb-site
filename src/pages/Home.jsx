@@ -7,6 +7,7 @@ import {
   MessageCircle,
   ExternalLink,
   ChevronDown,
+  BookOpen,
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -64,6 +65,9 @@ export default function Home() {
             <a className="hover:text-white" href="#system">
               System
             </a>
+            <Link className="hover:text-white" to="/ebook">
+              Free eBook
+            </Link>
             <a className="hover:text-white" href="#components">
               Components
             </a>
@@ -73,11 +77,9 @@ export default function Home() {
             <a className="hover:text-white" href="#pricing">
               Pricing
             </a>
-
             <Link className="hover:text-white" to="/articles">
               Articles
             </Link>
-
             <a className="hover:text-white" href="#faq">
               FAQ
             </a>
@@ -86,14 +88,23 @@ export default function Home() {
 
         {/* Row 2: Get Started (right aligned) */}
         <div className="mx-auto max-w-6xl px-4 pb-6 pt-2 flex justify-end border-t border-white/5">
-          <a
-            href={STRIPE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-dtb px-6 py-3 text-sm font-semibold hover:bg-dtb-hover"
-          >
-            Get Started <ArrowRight size={18} />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              to="/ebook"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold hover:bg-white/5"
+            >
+              Free eBook <BookOpen size={18} />
+            </Link>
+
+            <a
+              href={STRIPE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-dtb px-6 py-3 text-sm font-semibold hover:bg-dtb-hover"
+            >
+              Get Started <ArrowRight size={18} />
+            </a>
+          </div>
         </div>
       </header>
 
@@ -129,6 +140,13 @@ export default function Home() {
             Get Instant Access <ArrowRight size={18} />
           </a>
 
+          <Link
+            to="/ebook"
+            className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
+          >
+            Get the Free eBook <BookOpen size={18} />
+          </Link>
+
           <a
             href="#system"
             className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
@@ -153,6 +171,93 @@ export default function Home() {
           ))}
         </div>
       </motion.main>
+
+      {/* =======================
+          EBOOK SECTION
+      ======================= */}
+      <section id="ebook" className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/25 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300">
+                <BookOpen size={16} />
+                New Free eBook
+              </div>
+
+              <h2 className="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight">
+                If trading has ever felt harder the more effort you put in…
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-lg text-white/75">
+                This guide explains why.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-white/70 leading-relaxed">
+                Not more strategies. Not more indicators. Just a clear
+                explanation of what’s actually going on — and why things haven’t
+                worked the way you expected.
+              </p>
+
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Why effort alone makes trading feel heavier",
+                  "Why time-based charts create confusion and false signals",
+                  "Why most trading education keeps you stuck in interpretation",
+                  "What actually needs to change before results can stabilize",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
+                  >
+                    <Check className="mt-0.5 shrink-0 text-yellow-400" size={18} />
+                    <p className="text-sm text-white/80">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/ebook"
+                  className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
+                >
+                  Get the Free eBook <ArrowRight size={18} />
+                </Link>
+
+                <Link
+                  to="/ebook"
+                  className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
+                >
+                  Download the Free eBook <BookOpen size={18} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md">
+                <div className="absolute -inset-2 rounded-[2.5rem] bg-yellow-400/10 blur-2xl opacity-80" />
+
+                <div className="relative rounded-[2rem] border border-white/10 bg-gradient-to-br from-neutral-900 via-black to-neutral-950 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+                  <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-black">
+                    <img
+                      src="/ebook-cover.jpg"
+                      alt="DTB Traders eBook cover"
+                      className="h-full w-full object-cover contrast-110 brightness-105"
+                    />
+                  </div>
+
+                  <div className="absolute top-4 right-4 bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg">
+                    FREE
+                  </div>
+
+                  <div className="absolute bottom-5 left-5 rounded-full border border-white/10 bg-black/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white/80 backdrop-blur-sm">
+                    DTB Traders eBook
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* =======================
           WHY DTB IS DIFFERENT
@@ -257,12 +362,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Results & Proof
+                Real Activity. Real Outcomes.
               </h2>
               <p className="mt-4 max-w-3xl text-white/70">
-                Proof matters — but it has to be the right kind of proof. DTB
-                Traders focuses on transparent process, repeatable execution,
-                and performance tracking you can verify.
+                DTB Traders is built around transparency, repeatable process,
+                and real-time visibility — not selective screenshots, hindsight,
+                or backtest-style hype.
               </p>
             </div>
 
@@ -277,24 +382,24 @@ export default function Home() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                kpi: "Win Rate",
-                value: "—",
-                note: "Replace with your tracked figure",
+                kpi: "Result Updates",
+                value: "5,000+",
+                note: "Captured from live group activity",
               },
               {
-                kpi: "Avg. R / Trade",
-                value: "—",
-                note: "Risk-adjusted expectancy",
+                kpi: "Winning Outcomes",
+                value: "1,500+",
+                note: "Documented profit-based result posts",
               },
               {
-                kpi: "Max Drawdown",
-                value: "—",
-                note: "Define timeframe + method",
+                kpi: "Loss Transparency",
+                value: "Fully Visible",
+                note: "Both wins and losses are shared openly",
               },
               {
-                kpi: "Trades Tracked",
-                value: "—",
-                note: "Live / sim / verified",
+                kpi: "Environment",
+                value: "Live + Real",
+                note: "Not dependent on backtests alone",
               },
             ].map((s) => (
               <div
@@ -308,6 +413,21 @@ export default function Home() {
                 <div className="mt-2 text-xs text-white/55">{s.note}</div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 max-w-3xl">
+            <p className="text-white/75 leading-8">
+              Unlike most trading systems that rely on selective screenshots or
+              polished backtested performance, DTB Traders operates in a
+              transparent, real-time environment where both winning and losing
+              outcomes are visible.
+            </p>
+
+            <p className="mt-4 text-white/70 leading-8">
+              The focus is not on pretending every day is perfect. It is on
+              building a structured, repeatable process that can be observed,
+              evaluated, and improved over time.
+            </p>
           </div>
 
           <div className="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -360,17 +480,27 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-2 text-3xl font-bold">$399</div>
-              <div className="mt-1 text-sm text-white/60">Every 6 months</div>
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300">
+                🎁 Get 1 Month FREE — 7 Months Total Access
+              </div>
+
+              <div className="mt-4 flex items-end gap-3">
+                <div className="text-4xl font-bold">$399</div>
+                <div className="pb-1 text-sm text-white/60">for 6 months</div>
+              </div>
+
+              <div className="mt-1 text-sm text-white/60">
+                Pay for 6 months. Get 7 months of full access.
+              </div>
 
               <ul className="mt-6 space-y-3 text-sm text-white/75">
                 {[
-                  "Guided onboarding program with training and content designed to accelerate your learning on the DTB System of Tools.",
-                  "Over 60 proprietary indicators and automated trading strategies",
-                  "Advanced bar types engineered to reduce noise and reveal market structure",
-                  "Precise, automated execution logic that removes emotion and human error",
-                  "Embedded risk controls, trade filters, and position management rules",
-                  "Ongoing system enhancements based on performance data and market behavior",
+                  "Guided onboarding program with structured training",
+                  "60+ proprietary indicators and automated strategies",
+                  "Advanced bar types to reduce noise and reveal structure",
+                  "Rules-based execution — remove emotion from trading",
+                  "Built-in risk management and trade filters",
+                  "Continuous system updates based on performance data",
                 ].map((x) => (
                   <li key={x} className="flex items-start gap-2">
                     <Check size={18} className="mt-0.5 shrink-0" />
@@ -385,7 +515,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="mt-7 rounded-xl bg-dtb px-5 py-3 font-semibold hover:bg-dtb-hover text-center inline-flex items-center justify-center gap-2"
               >
-                Join Now <ArrowRight size={18} />
+                Start Now — Get 1 Month Free <ArrowRight size={18} />
               </a>
 
               <a
@@ -398,7 +528,7 @@ export default function Home() {
               </a>
 
               <div className="mt-3 text-xs text-white/50 text-center">
-                After successful payment, redirect customers to the onboarding form in Stripe.
+                Instant access. First month included at no additional cost.
               </div>
             </div>
           </div>
@@ -501,6 +631,13 @@ export default function Home() {
                     Join Now <ArrowRight size={18} />
                   </a>
 
+                  <Link
+                    to="/ebook"
+                    className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
+                  >
+                    Free eBook <BookOpen size={18} />
+                  </Link>
+
                   <a
                     href={FORM_LINK}
                     target="_blank"
@@ -522,6 +659,9 @@ export default function Home() {
                   <a className="hover:text-white" href="#system">
                     System
                   </a>
+                  <a className="hover:text-white" href="#ebook">
+                    Free eBook
+                  </a>
                   <a className="hover:text-white" href="#components">
                     Components
                   </a>
@@ -533,9 +673,6 @@ export default function Home() {
                   </a>
                   <a className="hover:text-white" href="#faq">
                     FAQ
-                  </a>
-                  <a className="hover:text-white" href="#pricing">
-                    Get Started
                   </a>
                 </div>
 

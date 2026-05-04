@@ -669,11 +669,11 @@ export default function Home() {
             {[
               {
                 q: "Is this financial advice?",
-                a: "No. DTB Traders provides tools and education. You are responsible for your own trading decisions and risk management.",
+                a: "No. DTB Traders provides tools and education. You are responsible for your own trading decisions and risk management. Please see our Risk Disclosure.",
               },
               {
                 q: "Is performance guaranteed?",
-                a: "No. Trading involves risk and markets change. Past performance is not indicative of future results. Always verify and trade responsibly.",
+                a: "No. Trading involves risk and our Risk Disclosure should be reviewed before you work with us. Please see our Risk Disclosure.",
               },
               {
                 q: "What platform is DTB Traders built for?",
@@ -681,15 +681,15 @@ export default function Home() {
               },
               {
                 q: "Can I cancel anytime?",
-                a: "Update this answer to match your real billing and cancellation policy for the 6-month subscription.",
+                a: "Yes, the benefit of having the 1st month complimentary is that you have the option to cancel before your 1st payment is due, so if this is not a good fit for you then feel free to cancel your subscription on Stripe.  At any time within the 6 months after payment you can cancel and not be charged again.",
               },
               {
                 q: "Do you support prop firms / evaluation accounts?",
-                a: "Update this based on your policy. Many members use systems in eval accounts, but rules vary by firm.",
+                a: "Yes as long as they support NinjaTrader, however be careful with those who do not support automated trading unless you specifically wish to use the DTB System for manual trading.",
               },
               {
                 q: "What markets does the system trade?",
-                a: "Update this with the futures products you target (e.g., ES, NQ, YM, CL, GC) and any session/time window assumptions.",
+                a: "Any instrument you have access to on NinjaTrader.  We do however focus on the MNQ and NQ in the Jump Start program and once you are familiar with the System, feel free to expand.",
               },
             ].map((item) => (
               <FaqItem key={item.q} q={item.q} a={item.a} />

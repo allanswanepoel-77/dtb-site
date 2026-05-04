@@ -17,6 +17,7 @@ import logo from "../assets/brand/dtb-logo.png";
 
 const STRIPE_LINK = "https://buy.stripe.com/4gMeVe4qb1BQ6zH5ka1sQ0j";
 const FORM_LINK = "https://forms.gle/95kqNiQ6q6CQ3Trg9";
+const DISCORD_LINK = "https://discord.gg/kzYXadT7pA";
 
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
@@ -49,6 +50,14 @@ function FaqItem({ q, a }) {
 export default function Home() {
   const year = new Date().getFullYear();
 
+  const openMemberstackModal = (modalType) => {
+    if (window.$memberstackDom) {
+      window.$memberstackDom.openModal(modalType);
+    } else {
+      console.error("Memberstack has not loaded yet.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       {/* =======================
@@ -74,21 +83,29 @@ export default function Home() {
             <a className="hover:text-white" href="#results">
               Results
             </a>
-            <a className="hover:text-white" href="#pricing">
-              Pricing
-            </a>
-            <Link className="hover:text-white" to="/articles">
-              Articles
+            <Link className="hover:text-white" to="/jumpstart">
+              Jump Start
             </Link>
+            <a className="hover:text-white" href="#risk-disclosure">
+              Risk Disclosure
+            </a>
             <a className="hover:text-white" href="#faq">
               FAQ
             </a>
           </nav>
         </div>
 
-        {/* Row 2: Get Started (right aligned) */}
+        {/* Row 2: Member Actions */}
         <div className="mx-auto max-w-6xl px-4 pb-6 pt-2 flex justify-end border-t border-white/5">
           <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              type="button"
+              onClick={() => openMemberstackModal("LOGIN")}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold hover:bg-white/5"
+            >
+              Member Login
+            </button>
+
             <Link
               to="/ebook"
               className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold hover:bg-white/5"
@@ -96,14 +113,12 @@ export default function Home() {
               Free eBook <BookOpen size={18} />
             </Link>
 
-            <a
-              href={STRIPE_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/jumpstart"
               className="inline-flex items-center gap-2 rounded-xl bg-dtb px-6 py-3 text-sm font-semibold hover:bg-dtb-hover"
             >
-              Get Started <ArrowRight size={18} />
-            </a>
+              Join Now <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </header>
@@ -131,14 +146,12 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
-          <a
-            href={STRIPE_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/jumpstart"
             className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
           >
             Get Instant Access <ArrowRight size={18} />
-          </a>
+          </Link>
 
           <Link
             to="/ebook"
@@ -152,6 +165,15 @@ export default function Home() {
             className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
           >
             See how it works <ExternalLink size={18} />
+          </a>
+
+          <a
+            href={DISCORD_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
+          >
+            Join Discord <MessageCircle size={18} />
           </a>
         </div>
 
@@ -209,7 +231,10 @@ export default function Home() {
                     key={item}
                     className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
                   >
-                    <Check className="mt-0.5 shrink-0 text-yellow-400" size={18} />
+                    <Check
+                      className="mt-0.5 shrink-0 text-yellow-400"
+                      size={18}
+                    />
                     <p className="text-sm text-white/80">{item}</p>
                   </div>
                 ))}
@@ -371,12 +396,12 @@ export default function Home() {
               </p>
             </div>
 
-            <a
-              href="#pricing"
+            <Link
+              to="/jumpstart"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-dtb px-5 py-3 font-semibold hover:bg-dtb-hover"
             >
               See offer <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -435,11 +460,12 @@ export default function Home() {
               <Shield size={16} /> Risk Disclosure
             </div>
             <p className="mt-2 text-xs text-white/60 leading-relaxed">
-              Futures trading involves substantial risk of loss and is not suitable
-              for all investors. Past performance is not indicative of future
-              results. Any performance metrics or examples shown on this site
-              should be verified independently and may reflect simulated results,
-              which have inherent limitations. This is not financial advice.
+              Futures trading involves substantial risk of loss and is not
+              suitable for all investors. Past performance is not indicative of
+              future results. Any performance metrics or examples shown on this
+              site should be verified independently and may reflect simulated
+              results, which have inherent limitations. This is not financial
+              advice.
             </p>
           </div>
         </div>
@@ -453,12 +479,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Jump Start Offer
+                Start Trading with a Structured, Fully Integrated System
               </h2>
               <p className="mt-4 max-w-3xl text-white/70">
-                Get started with the DTB Traders system through one focused
-                subscription designed to accelerate your onboarding, learning,
-                and execution.
+                Get immediate access to the complete DTB Traders system —
+                strategies, indicators, execution logic, onboarding, and ongoing
+                updates — all designed to work together as one system.
               </p>
             </div>
 
@@ -470,44 +496,70 @@ export default function Home() {
           </div>
 
           <div className="mt-12 max-w-2xl mx-auto">
-            <div className="rounded-2xl border border-dtb/40 bg-gradient-to-b from-dtb/20 to-white/5 p-7 flex flex-col">
+            <div className="rounded-2xl border border-dtb/40 bg-gradient-to-b from-dtb/20 to-white/5 p-7 flex flex-col shadow-2xl">
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div className="text-sm text-white/60">
-                  JUMP START 6 Month Subscription
+                  JUMP START PROGRAM
                 </div>
+
                 <div className="text-xs font-semibold rounded-full bg-dtb px-3 py-1">
-                  Limited Offer
+                  7 Months Total Access
                 </div>
               </div>
 
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300">
-                🎁 Get 1 Month FREE — 7 Months Total Access
+              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300">
+                30-Day Risk-Free Start
               </div>
 
-              <div className="mt-4 flex items-end gap-3">
+              <h3 className="mt-6 text-2xl md:text-3xl font-extrabold tracking-tight">
+                Get full access immediately. Cancel within the first 30 days if
+                it’s not right for you.
+              </h3>
+
+              <p className="mt-4 text-sm text-white/70 leading-relaxed">
+                Register with your payment details today and unlock the full DTB
+                Traders system right away. If you decide within the first 30
+                days that it’s not the right fit, you can cancel during that
+                period.
+              </p>
+
+              <div className="mt-6 flex items-end gap-3">
                 <div className="text-4xl font-bold">$399</div>
-                <div className="pb-1 text-sm text-white/60">for 6 months</div>
+                <div className="pb-1 text-sm text-white/60">
+                  total for 7 months access
+                </div>
               </div>
 
-              <div className="mt-1 text-sm text-white/60">
-                Pay for 6 months. Get 7 months of full access.
+              <div className="mt-2 text-sm text-white/60">
+                6 months billed. 7 months of total access included.
               </div>
 
-              <ul className="mt-6 space-y-3 text-sm text-white/75">
-                {[
-                  "Guided onboarding program with structured training",
-                  "60+ proprietary indicators and automated strategies",
-                  "Advanced bar types to reduce noise and reveal structure",
-                  "Rules-based execution — remove emotion from trading",
-                  "Built-in risk management and trade filters",
-                  "Continuous system updates based on performance data",
-                ].map((x) => (
-                  <li key={x} className="flex items-start gap-2">
-                    <Check size={18} className="mt-0.5 shrink-0" />
-                    <span>{x}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/40 p-5">
+                <div className="text-sm font-semibold text-white">
+                  What’s included:
+                </div>
+
+                <ul className="mt-4 space-y-3 text-sm text-white/75">
+                  {[
+                    "Full DTB Trading System — strategies, indicators, and execution engine",
+                    "Structured onboarding to help you get operational quickly",
+                    "60+ proprietary indicators and automated strategies",
+                    "Advanced bar types engineered to reduce noise and reveal structure",
+                    "Rules-based execution framework designed to remove emotion",
+                    "Built-in risk management and trade filtering",
+                    "Ongoing system updates and performance-driven improvements",
+                    "Access to the DTB Traders community and live trading environment",
+                  ].map((x) => (
+                    <li key={x} className="flex items-start gap-2">
+                      <Check
+                        size={18}
+                        className="mt-0.5 shrink-0 text-yellow-400"
+                      />
+                      <span>{x}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <a
                 href={STRIPE_LINK}
@@ -515,8 +567,13 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="mt-7 rounded-xl bg-dtb px-5 py-3 font-semibold hover:bg-dtb-hover text-center inline-flex items-center justify-center gap-2"
               >
-                Start Now — Get 1 Month Free <ArrowRight size={18} />
+                Start Now — 30-Day Risk-Free Access <ArrowRight size={18} />
               </a>
+
+              <div className="mt-4 text-xs text-white/55 text-center leading-relaxed">
+                Full system access starts immediately. Cancel anytime within the
+                first 30 days if you decide it’s not for you.
+              </div>
 
               <a
                 href={FORM_LINK}
@@ -527,9 +584,71 @@ export default function Home() {
                 Already purchased? Complete onboarding form →
               </a>
 
-              <div className="mt-3 text-xs text-white/50 text-center">
-                Instant access. First month included at no additional cost.
+              <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-white/55 leading-relaxed">
+                This is not another indicator pack or disconnected strategy
+                bundle. DTB Traders is built as a complete trading system
+                designed for structured, repeatable execution. Futures trading
+                involves risk and is not suitable for all investors.
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =======================
+          RISK DISCLOSURE
+      ======================= */}
+      <section id="risk-disclosure" className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-yellow-300">
+              <Shield size={18} /> Risk Disclosure
+            </div>
+
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+              Futures Trading Risk Disclosure
+            </h2>
+
+            <div className="mt-6 space-y-4 text-sm md:text-base text-white/70 leading-8">
+              <p>
+                Futures trading contains substantial risk and is not for every
+                investor. An investor could potentially lose all or more than the
+                initial investment.
+              </p>
+
+              <p>
+                Risk capital is money that can be lost without jeopardizing
+                one’s financial security or lifestyle. Only risk capital should
+                be used for trading and only those with sufficient risk capital
+                should consider trading.
+              </p>
+
+              <p>
+                Past performance is not necessarily indicative of future
+                results. Results may be shared publicly; however, these are not
+                guaranteed. All DTB Products are provided with no guarantee of
+                returns, as no such guarantee can be made either lawfully or
+                otherwise.
+              </p>
+
+              <p>
+                Your degree of success is dependent on your risk management and
+                thoughtful consideration when entering and exiting positions in
+                the market.
+              </p>
+
+              <p>
+                The tools DTB Traders provide are designed to help you
+                understand the market and see what price is likely to do next;
+                however, you are ultimately responsible for how you make use of
+                them.
+              </p>
+
+              <p className="font-semibold text-white">
+                Finally, DTB Traders ONLY recommends trading Futures on a
+                regulated exchange. Forex trading is NOT endorsed and is NOT
+                supported.
+              </p>
             </div>
           </div>
         </div>
@@ -542,8 +661,8 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">FAQ</h2>
           <p className="mt-4 max-w-3xl text-white/70">
-            Quick answers to common questions. (We can tailor these to your exact
-            policies and platform.)
+            Quick answers to common questions. (We can tailor these to your
+            exact policies and platform.)
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -558,7 +677,7 @@ export default function Home() {
               },
               {
                 q: "What platform is DTB Traders built for?",
-                a: "Update this with your actual platform details (e.g., NinjaTrader), including version requirements and any data feed recommendations.",
+                a: "The DTB System runs on NinjaTrader. If you already use NinjaTrader, the transition is straightforward. If you do not, getting started is still simple. NinjaTrader provides complimentary short-term access to the platform and real-time data, and many funded account programs include both platform access and data at very low cost.",
               },
               {
                 q: "Can I cancel anytime?",
@@ -587,15 +706,17 @@ export default function Home() {
             </p>
 
             <div className="mt-5 flex flex-col sm:flex-row gap-3">
-              <a
-                href="#pricing"
+              <Link
+                to="/jumpstart"
                 className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
               >
                 See offer <ArrowRight size={18} />
-              </a>
+              </Link>
 
               <a
-                href="#"
+                href={DISCORD_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-xl border border-white/15 px-6 py-3 font-semibold hover:bg-white/5 inline-flex items-center justify-center gap-2"
               >
                 Join community <MessageCircle size={18} />
@@ -622,14 +743,12 @@ export default function Home() {
                 </p>
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={STRIPE_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/jumpstart"
                     className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
                   >
                     Join Now <ArrowRight size={18} />
-                  </a>
+                  </Link>
 
                   <Link
                     to="/ebook"
@@ -646,10 +765,20 @@ export default function Home() {
                   >
                     Onboarding Form <MessageCircle size={18} />
                   </a>
+
+                  <a
+                    href={DISCORD_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
+                  >
+                    Join Discord <MessageCircle size={18} />
+                  </a>
                 </div>
 
                 <div className="mt-5 text-xs text-white/55">
-                  Primary CTA: Stripe checkout • Secondary CTA: Google onboarding form
+                  Primary CTA: Jump Start offer • Secondary CTA: Google
+                  onboarding form
                 </div>
               </div>
 
@@ -668,11 +797,22 @@ export default function Home() {
                   <a className="hover:text-white" href="#results">
                     Results
                   </a>
-                  <a className="hover:text-white" href="#pricing">
-                    Pricing
+                  <Link className="hover:text-white" to="/jumpstart">
+                    Jump Start
+                  </Link>
+                  <a className="hover:text-white" href="#risk-disclosure">
+                    Risk Disclosure
                   </a>
                   <a className="hover:text-white" href="#faq">
                     FAQ
+                  </a>
+                  <a
+                    className="hover:text-white"
+                    href={DISCORD_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Discord
                   </a>
                 </div>
 

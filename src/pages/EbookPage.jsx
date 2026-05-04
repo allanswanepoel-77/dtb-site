@@ -1,15 +1,9 @@
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Download,
-  CheckCircle2,
-  Mail,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { useState } from "react";
 
 const GOOGLE_FORM_ACTION =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdn8nWUT_G9E6BVgcHHUt0i3Q64LWh78Kpk6bdRCgYHchvCeA/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLSdn8nWUT_G9E6BVgcHHUt0i3Q64LWh78Kpk6bdRCgYHchvCeA/formResponse?embedded=true";
 
 const FIRST_NAME_ENTRY = "2005620554";
 const LAST_NAME_ENTRY = "763429133";
@@ -20,35 +14,29 @@ export default function EbookPage() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setSubmitting(true);
-
-    try {
-      const formData = new FormData();
-      formData.append(`entry.${FIRST_NAME_ENTRY}`, firstName);
-      formData.append(`entry.${LAST_NAME_ENTRY}`, lastName);
-      formData.append(`entry.${EMAIL_ENTRY}`, email);
-
-      await fetch(GOOGLE_FORM_ACTION, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData,
-      });
-
-      window.location.href = "/ebook-dtb-traders.pdf";
-    } catch (error) {
-      console.error("Form submission failed:", error);
-      alert("Something went wrong. Please try again.");
-      setSubmitting(false);
-    }
+    setSubmitted(true);
   };
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      <div className="mx-auto max-w-6xl px-4 py-16">
+      <iframe
+        name="hiddenGoogleForm"
+        title="hiddenGoogleForm"
+        style={{ display: "none" }}
+        onLoad={() => {
+          if (submitted) {
+            setTimeout(() => {
+              window.location.href = "/ebook-dtb-traders.pdf";
+            }, 2000);
+          }
+        }}
+      />
 
+      <div className="mx-auto max-w-6xl px-4 py-16">
         {/* HERO */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -118,9 +106,16 @@ export default function EbookPage() {
                 Enter your details and get the free eBook
               </h2>
 
-              <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              <form
+                action={GOOGLE_FORM_ACTION}
+                method="POST"
+                target="hiddenGoogleForm"
+                onSubmit={handleSubmit}
+                className="mt-6 space-y-4"
+              >
                 <input
                   type="text"
+                  name={`entry.${FIRST_NAME_ENTRY}`}
                   placeholder="First Name"
                   required
                   value={firstName}
@@ -130,6 +125,7 @@ export default function EbookPage() {
 
                 <input
                   type="text"
+                  name={`entry.${LAST_NAME_ENTRY}`}
                   placeholder="Last Name"
                   required
                   value={lastName}
@@ -139,6 +135,7 @@ export default function EbookPage() {
 
                 <input
                   type="email"
+                  name={`entry.${EMAIL_ENTRY}`}
                   placeholder="Email Address"
                   required
                   value={email}
@@ -146,14 +143,27 @@ export default function EbookPage() {
                   className="w-full p-3 rounded-xl bg-slate-900 border border-white/10"
                 />
 
+                <input type="hidden" name="fvv" value="1" />
+                <input type="hidden" name="pageHistory" value="0" />
+                <input
+                  type="hidden"
+                  name="fbzx"
+                  value="-4501908059688706340"
+                />
+
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-dtb py-3 rounded-xl font-semibold hover:bg-dtb-hover"
+                  className="w-full bg-dtb py-3 rounded-xl font-semibold hover:bg-dtb-hover disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? "Sending..." : "Get the Free eBook"}
                 </button>
               </form>
+
+              <p className="mt-4 text-xs text-white/45 leading-relaxed">
+                Your information is used to provide access to the eBook and
+                follow up with relevant DTB Traders updates.
+              </p>
             </div>
           </div>
         </motion.div>
@@ -175,8 +185,8 @@ export default function EbookPage() {
                 key={item}
                 className="flex gap-3 p-4 border border-white/10 rounded-2xl"
               >
-                <CheckCircle2 className="text-yellow-400" />
-                {item}
+                <CheckCircle2 className="text-yellow-400 shrink-0" />
+                <span>{item}</span>
               </div>
             ))}
           </div>
@@ -205,21 +215,20 @@ export default function EbookPage() {
                   key={item}
                   className="flex gap-3 p-4 border border-white/10 rounded-2xl"
                 >
-                  <CheckCircle2 className="text-yellow-400" />
-                  {item}
+                  <CheckCircle2 className="text-yellow-400 shrink-0" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
 
             <a
               href="/#pricing"
-              className="mt-8 inline-flex bg-dtb px-6 py-3 rounded-xl font-semibold"
+              className="mt-8 inline-flex items-center gap-2 bg-dtb px-6 py-3 rounded-xl font-semibold hover:bg-dtb-hover"
             >
-              Explore the DTB System <ArrowRight />
+              Explore the DTB System <ArrowRight size={18} />
             </a>
           </div>
         </div>
-
       </div>
     </div>
   );

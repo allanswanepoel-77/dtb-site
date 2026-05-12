@@ -3,7 +3,10 @@ const GOOGLE_DRIVE_LINK =
 
 export default function Member() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-10">
+    <div
+      data-ms-content="jump-start-program"
+      className="min-h-screen bg-slate-950 text-white p-10"
+    >
       <h1 className="text-5xl font-bold">DTB Traders Member Area</h1>
 
       <p className="mt-4 text-white/70">
@@ -14,7 +17,8 @@ export default function Member() {
         <h2 className="text-2xl font-bold">Jump Start Program</h2>
 
         <p className="mt-3 text-white/70">
-          Access your Jump Start Program files, setup resources, and member materials below.
+          Access your Jump Start Program files, setup resources, and member
+          materials below.
         </p>
 
         <a

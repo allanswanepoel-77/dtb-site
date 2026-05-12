@@ -50,13 +50,19 @@ function FaqItem({ q, a }) {
 export default function Home() {
   const year = new Date().getFullYear();
 
-  const openMemberstackModal = (modalType) => {
-    if (window.$memberstackDom) {
-      window.$memberstackDom.openModal(modalType);
-    } else {
-      console.error("Memberstack has not loaded yet.");
+  const openMemberstackModal = async (modalType) => {
+  if (window.$memberstackDom) {
+    await window.$memberstackDom.openModal(modalType);
+
+    const member = await window.$memberstackDom.getCurrentMember();
+
+    if (member?.data) {
+      window.location.href = "/member";
     }
-  };
+  } else {
+    console.error("Memberstack has not loaded yet.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">

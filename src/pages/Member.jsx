@@ -21,7 +21,7 @@ export default function Member() {
           href={GOOGLE_DRIVE_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover"
+          className="mt-6 flex w-fit rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover"
         >
           Open Jump Start Program Files
         </a>

@@ -1,5 +1,5 @@
 const GOOGLE_DRIVE_LINK =
-  "https://drive.google.com/drive/folders/15O19ZS2_AHPiDAhzucmRXp-oVnX-uKn";
+  "https://drive.google.com/drive/folders/1jW0Ja_M7FdZNGLhV71yn9rVhabaewdUg?usp=sharing";
 
 export default function Member() {
   return (

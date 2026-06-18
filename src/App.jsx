@@ -3,6 +3,7 @@ import Home from "./pages/Home.jsx";
 import EbookPage from "./pages/EbookPage";
 import JumpStart from "./pages/JumpStart";
 import Member from "./pages/Member";
+import Resources from "./pages/Resources";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Route path="/ebook" element={<EbookPage />} />
       <Route path="/jumpstart" element={<JumpStart />} />
       <Route path="/member" element={<Member />} />
+      <Route path="/resources" element={<Resources />} />
     </Routes>
   );
 }

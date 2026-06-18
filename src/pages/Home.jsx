@@ -92,6 +92,9 @@ export default function Home() {
             <Link className="hover:text-white" to="/jumpstart">
               Jump Start
             </Link>
+            <Link className="hover:text-white" to="/resources">
+              Resources
+            </Link>
             <a className="hover:text-white" href="#risk-disclosure">
               Risk Disclosure
             </a>
@@ -805,6 +808,9 @@ export default function Home() {
                   </a>
                   <Link className="hover:text-white" to="/jumpstart">
                     Jump Start
+                  </Link>
+                  <Link className="hover:text-white" to="/resources">
+                    Resources
                   </Link>
                   <a className="hover:text-white" href="#risk-disclosure">
                     Risk Disclosure

@@ -86,6 +86,9 @@ export default function Home() {
             <a className="hover:text-white" href="#components">
               Components
             </a>
+            <Link className="hover:text-white" to="/strategy-lab">
+              DTB Strategy Lab
+            </Link>
             <a className="hover:text-white" href="#results">
               Results
             </a>
@@ -803,6 +806,9 @@ export default function Home() {
                   <a className="hover:text-white" href="#components">
                     Components
                   </a>
+                  <Link className="hover:text-white" to="/strategy-lab">
+                    DTB Strategy Lab
+                  </Link>
                   <a className="hover:text-white" href="#results">
                     Results
                   </a>

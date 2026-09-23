@@ -49,20 +49,22 @@ export default function EbookPage() {
           </div>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight">
-            If trading has ever felt
+            Retail Trading Is Broken
             <span className="block text-yellow-400">
-              harder the more effort you put in…
+              And Here&apos;s the Proof
             </span>
           </h1>
 
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-white/75 leading-8">
-            This guide will show you why.
+          <p className="mt-6 max-w-3xl mx-auto text-lg text-white/75 leading-8">
+            Before you buy another strategy, indicator, or trading course,
+            understand the environment you are actually trading in.
           </p>
 
-          <p className="mt-4 max-w-2xl mx-auto text-white/70 leading-7">
-            Not more strategies. Not more indicators. Just a clear explanation of
-            what’s actually going on — and why things haven’t worked the way you
-            expected.
+          <p className="mt-4 max-w-3xl mx-auto text-white/70 leading-7">
+            This free guide examines why retail trading becomes unnecessarily
+            difficult, why more effort and more information often make the problem
+            worse, and what changes when price, automation, and the role of the
+            trader are structured differently.
           </p>
         </motion.div>
 
@@ -103,8 +105,13 @@ export default function EbookPage() {
               </div>
 
               <h2 className="mt-3 text-2xl font-bold">
-                Enter your details and get the free eBook
+                Read the argument before you judge the system
               </h2>
+
+              <p className="mt-3 text-sm text-white/65 leading-6">
+                Enter your details for immediate access to the complete free eBook.
+                No strategy pitch first - start with the reasoning behind DTB.
+              </p>
 
               <form
                 action={GOOGLE_FORM_ACTION}
@@ -170,63 +177,229 @@ export default function EbookPage() {
 
         {/* VALUE */}
         <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold">
-            What you’ll get from this guide
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
+            A different question
+          </p>
+
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+            What if the problem is not the trader?
           </h2>
 
-          <div className="mt-8 grid sm:grid-cols-2 gap-4">
+          <p className="mt-4 max-w-3xl mx-auto text-white/70 leading-7">
+            Most retail trading education focuses on finding a better entry, a
+            better indicator, or more discipline. This book steps back and asks a
+            more fundamental question: what if the environment itself creates
+            unnecessary complexity?
+          </p>
+
+          <div className="mt-8 grid sm:grid-cols-2 gap-4 text-left">
             {[
-              "Why effort alone makes trading harder",
-              "Why charts create confusion",
-              "Why most traders stay stuck",
-              "What actually needs to change",
+              "Why working harder can create more decisions instead of more clarity",
+              "How the way price is represented can shape what the trader thinks they see",
+              "Why pattern recognition and interpretation can become difficult to test objectively",
+              "Why changing the trading environment can matter as much as changing trader behavior",
+              "The structural difference between centralized futures markets and fragmented retail environments",
+              "Why automation can move repetitive work from the trader to the technology",
+              "How participation-based structure changes the way DTB organizes price",
+              "Why the trader can evolve from operating the machinery to managing the system",
             ].map((item) => (
               <div
                 key={item}
-                className="flex gap-3 p-4 border border-white/10 rounded-2xl"
+                className="flex gap-3 p-4 border border-white/10 bg-white/[0.03] rounded-2xl"
               >
-                <CheckCircle2 className="text-yellow-400 shrink-0" />
-                <span>{item}</span>
+                <CheckCircle2 className="text-yellow-400 shrink-0 mt-0.5" />
+                <span className="text-white/80">{item}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* SOFT BRIDGE */}
+        {/* TRANSFORMATION */}
         <div className="mt-20">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h2 className="text-3xl font-bold">
-              If this brought clarity, DTB shows you what comes next.
-            </h2>
-
-            <p className="mt-4 text-white/70">
-              Understanding the problem is step one. The DTB system is where that
-              understanding becomes practical.
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
+              The central idea
             </p>
 
-            <div className="mt-6 grid sm:grid-cols-2 gap-4">
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+              Change the environment. Change the role of the trader.
+            </h2>
+
+            <p className="mt-4 max-w-3xl mx-auto text-white/70 leading-7">
+              The book builds toward a different model of retail trading - one
+              designed to reduce unnecessary interpretation, automate repeatable
+              work, and make human judgment more deliberate rather than more
+              frequent.
+            </p>
+          </div>
+
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+              <div className="text-sm font-semibold uppercase tracking-wide text-white/50">
+                Conventional retail approach
+              </div>
+
+              <div className="mt-6 space-y-4 text-white/70">
+                {[
+                  "Time organizes the view of price",
+                  "The trader interprets patterns and signals",
+                  "The trader repeatedly monitors and executes",
+                  "More tools can create more decisions",
+                  "The trader operates the machinery",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white/35 shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-yellow-400/20 bg-yellow-400/[0.05] p-6 md:p-8">
+              <div className="text-sm font-semibold uppercase tracking-wide text-yellow-300">
+                The structural alternative
+              </div>
+
+              <div className="mt-6 space-y-4 text-white/85">
+                {[
+                  "Participation can organize the view of price",
+                  "Defined structure reduces unnecessary interpretation",
+                  "Technology can handle repeatable execution and monitoring",
+                  "Integration can reduce operational complexity",
+                  "The trader develops oversight, risk judgment, and management",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3">
+                    <CheckCircle2 className="text-yellow-400 shrink-0 mt-0.5" size={20} />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* VIDEO - EBOOK TO STRATEGY LAB */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-20"
+        >
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
+              From the eBook to the system
+            </p>
+
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+              See what the idea looks like in practice
+            </h2>
+
+            <p className="mt-4 max-w-3xl mx-auto text-white/70 leading-7">
+              The eBook explains why DTB approaches retail trading differently.
+              This walkthrough shows what happens when those ideas are engineered
+              into an actual trading environment - from setup and synchronized
+              strategy templates to launching and managing automated strategies
+              through DTB Strategy Lab.
+            </p>
+          </div>
+
+          <div className="mt-8 mx-auto max-w-5xl">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-black shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+              <div className="relative aspect-video">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/ZaI-WE5byS4"
+                  title="Ebook video - Setup to Running Strategies"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+              <p className="text-xs md:text-sm text-white/55 leading-6">
+                Futures trading involves substantial risk of loss and is not
+                suitable for all investors. "Earn as you learn" describes the
+                ability to become operational while learning the DTB environment
+                and is not a promise of profit or trading performance. Automated
+                strategies can produce both winning and losing outcomes. Past
+                performance is not indicative of future results.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* SOFT BRIDGE */}
+        <div className="mt-20">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
+              From argument to implementation
+            </p>
+
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+              DTB is where those ideas become an operating environment.
+            </h2>
+
+            <p className="mt-4 max-w-4xl text-white/70 leading-7">
+              The eBook does not ask you to believe in a strategy. It first builds
+              the case for changing the structure around the trader. DTB is the
+              practical implementation of that design - combining price structure,
+              purpose-built tools, automated strategies, risk controls, Strategy
+              Lab, and guided onboarding into one integrated environment.
+            </p>
+
+            <div className="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "Structure-first approach",
-                "Integrated system",
-                "Guided onboarding",
-                "Clear execution framework",
+                "Participation-based price structure",
+                "Purpose-built indicators and tools",
+                "Automated strategy execution",
+                "Integrated risk and trade management",
+                "DTB Strategy Lab for centralized oversight",
+                "Guided onboarding and prepared strategies",
               ].map((item) => (
                 <div
                   key={item}
                   className="flex gap-3 p-4 border border-white/10 rounded-2xl"
                 >
-                  <CheckCircle2 className="text-yellow-400 shrink-0" />
+                  <CheckCircle2 className="text-yellow-400 shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
 
-            <a
-              href="/#pricing"
-              className="mt-8 inline-flex items-center gap-2 bg-dtb px-6 py-3 rounded-xl font-semibold hover:bg-dtb-hover"
-            >
-              Explore the DTB System <ArrowRight size={18} />
-            </a>
+            <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/50 p-5">
+              <p className="text-white/80 leading-7">
+                DTB does not predict future price movement, remove trading risk, or
+                guarantee outcomes. The objective is to create a more structured
+                environment in which repeatable work can be automated and the
+                trader can focus more deliberately on oversight, risk, and judgment.
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <a
+                href="/#system"
+                className="inline-flex items-center justify-center gap-2 bg-dtb px-6 py-3 rounded-xl font-semibold hover:bg-dtb-hover"
+              >
+                See How DTB Works <ArrowRight size={18} />
+              </a>
+
+              <a
+                href="/strategy-lab"
+                className="inline-flex items-center justify-center gap-2 border border-white/15 px-6 py-3 rounded-xl font-semibold text-white/90 hover:bg-white/5"
+              >
+                Explore Strategy Lab <ArrowRight size={18} />
+              </a>
+
+              <a
+                href="/jumpstart"
+                className="inline-flex items-center justify-center gap-2 border border-white/15 px-6 py-3 rounded-xl font-semibold text-white/90 hover:bg-white/5"
+              >
+                Explore the 30-Day Evaluation <ArrowRight size={18} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

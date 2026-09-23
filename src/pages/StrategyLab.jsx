@@ -10,6 +10,7 @@ import {
   SlidersHorizontal,
   Target,
   Zap,
+  Check,
 } from "lucide-react";
 
 import strategyLabImage from "../assets/strategy-lab/DTB-Strategy-Lab.jpg";
@@ -19,18 +20,16 @@ const YOUTUBE_VIDEO = "https://www.youtube.com/watch?v=N0qH4GNbpGc";
 export default function StrategyLab() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-
       {/* =======================
           HERO
       ======================= */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-16 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-
             <div className="lg:col-span-2">
               <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-300">
                 <Zap size={16} />
-                Automation to the Next Level
+                From Operator to Manager
               </div>
 
               <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -38,16 +37,14 @@ export default function StrategyLab() {
               </h1>
 
               <p className="mt-6 text-xl text-white/75 leading-relaxed">
-                One centralized command center for launching, monitoring, and
-                controlling multiple DTB trading strategies across instruments
-                and accounts.
+                One centralized environment for launching, monitoring, and managing
+                multiple DTB trading strategies across instruments and accounts.
               </p>
 
               <p className="mt-5 text-white/65 leading-relaxed">
-                Instead of managing strategy after strategy across separate
-                charts and windows, DTB Strategy Lab brings the key controls,
-                templates, accounts, status, and live performance information
-                together in one purpose-built interface.
+                DTB Strategy Lab is built around a simple idea: technology should
+                handle repeatable operational work so the trader can spend more
+                time on oversight, risk, and management.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -65,7 +62,7 @@ export default function StrategyLab() {
                   to="/jumpstart"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold hover:bg-white/5"
                 >
-                  Get DTB Traders
+                  Start the 30-Day Evaluation
                   <ArrowRight size={18} />
                 </Link>
               </div>
@@ -80,7 +77,6 @@ export default function StrategyLab() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -91,18 +87,46 @@ export default function StrategyLab() {
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-            One interface. Multiple strategies.
+            The trader should not have to do everything
           </p>
 
           <h2 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
-            Stop managing automation one chart at a time.
+            Move repetitive work into the system.
           </h2>
 
           <p className="mt-6 mx-auto max-w-3xl text-lg text-white/70 leading-relaxed">
-            DTB Strategy Lab gives you a single operating layer for the DTB
-            Modena Wick Trader, Baseline Wick Trader, official DTB templates,
-            and your own personal strategy templates.
+            Traditional automated trading can still leave the trader managing
+            strategy after strategy, chart after chart, and setting after setting.
+            Strategy Lab creates a centralized operating layer for launching,
+            observing, and coordinating the DTB environment.
           </p>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            {[
+              {
+                title: "Automate",
+                text: "Reduce repetitive setup and operational work that can be defined and repeated.",
+              },
+              {
+                title: "Centralize",
+                text: "Bring templates, accounts, strategy status, controls, and monitoring into one interface.",
+              },
+              {
+                title: "Manage",
+                text: "Shift the trader's attention toward oversight, risk decisions, and system management.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-5"
+              >
+                <div className="font-semibold">{item.title}</div>
+                <p className="mt-2 text-sm text-white/65 leading-6">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -111,96 +135,152 @@ export default function StrategyLab() {
       ======================= */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-16">
-
           <h2 className="text-3xl md:text-4xl font-bold text-center">
-            Built to Control the Entire DTB Trading Environment
+            One Operating Layer for the DTB Trading Environment
           </h2>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <p className="mt-4 mx-auto max-w-3xl text-center text-white/65 leading-7">
+            Strategy Lab brings together the controls needed to operate multiple
+            automated strategies without turning the trader into a full-time
+            operator of individual charts and strategy instances.
+          </p>
 
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <Layers className="text-orange-400" size={28} />
-
               <h3 className="mt-5 text-xl font-bold">
                 Launch Multiple Strategies
               </h3>
-
               <p className="mt-3 text-white/65 leading-relaxed">
                 Select multiple DTB templates, choose the trading account for
-                each, and launch them together instead of manually building
-                every strategy instance one by one.
+                each, and launch them together instead of manually building every
+                strategy instance one by one.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <Monitor className="text-orange-400" size={28} />
-
               <h3 className="mt-5 text-xl font-bold">
                 Run Chartless
               </h3>
-
               <p className="mt-3 text-white/65 leading-relaxed">
-                Launch strategies without opening visible charts, helping reduce
-                NinjaTrader resource usage when operating multiple automated
-                strategies.
+                Launch strategies without keeping visible charts open, helping
+                reduce NinjaTrader resource usage when operating multiple
+                automated strategies.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <BarChart3 className="text-orange-400" size={28} />
-
               <h3 className="mt-5 text-xl font-bold">
-                Monitor Live Results
+                Monitor Live Strategy Data
               </h3>
-
               <p className="mt-3 text-white/65 leading-relaxed">
-                See enabled status, position, quantity, unrealized PnL, realized
-                PnL, and total PnL for your selected strategies from one live
-                monitoring table.
+                View enabled status, position, quantity, unrealized PnL, realized
+                PnL, and total PnL for selected strategies from one monitoring
+                table.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <PauseCircle className="text-orange-400" size={28} />
-
               <h3 className="mt-5 text-xl font-bold">
-                Pause & Resume Linked Strategies
+                Pause and Resume Linked Strategies
               </h3>
-
               <p className="mt-3 text-white/65 leading-relaxed">
-                Pause new entries across linked strategies from one control,
-                then resume the entire group when you are ready.
+                Pause new entries across linked strategies from one control, then
+                resume the group when you are ready.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <SlidersHorizontal className="text-orange-400" size={28} />
-
               <h3 className="mt-5 text-xl font-bold">
                 Global Direction Control
               </h3>
-
               <p className="mt-3 text-white/65 leading-relaxed">
                 Move linked strategies between Both, Long Only, and Short Only
-                from the Strategy Lab rather than changing each strategy
+                from Strategy Lab rather than changing each strategy
                 individually.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <Target className="text-orange-400" size={28} />
-
               <h3 className="mt-5 text-xl font-bold">
                 Account-Level Risk Controls
               </h3>
-
               <p className="mt-3 text-white/65 leading-relaxed">
                 Configure account-level profit targets, stop-loss limits, and
-                trading drawdown controls across strategies operating on the
-                same account.
+                trading drawdown controls across strategies operating on the same
+                account.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
 
+      {/* =======================
+          TEMPLATES + WORKLOAD
+      ======================= */}
+      <section className="border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+                Prepared strategy templates
+              </p>
+
+              <h2 className="mt-4 text-3xl md:text-5xl font-extrabold">
+                Start from a prepared environment, not a blank screen.
+              </h2>
+
+              <p className="mt-6 text-white/70 leading-relaxed">
+                Strategy Lab can work with official DTB templates as well as your
+                own personal strategy templates. The goal is to reduce the amount
+                of repetitive configuration required before strategies can be
+                launched and managed.
+              </p>
+
+              <div className="mt-7 space-y-4">
+                {[
+                  "Select prepared strategy templates",
+                  "Assign the appropriate trading account",
+                  "Launch multiple selected templates together",
+                  "Reuse your operating environment when you return",
+                  "Manage linked strategies from a common control layer",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3 text-white/80">
+                    <Check
+                      size={18}
+                      className="mt-0.5 shrink-0 text-orange-400"
+                    />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-white/5 p-8 md:p-10">
+              <div className="text-sm font-semibold text-orange-300">
+                THE DESIGN PRINCIPLE
+              </div>
+
+              <div className="mt-6 text-4xl md:text-5xl font-extrabold">
+                Automate repetition.
+              </div>
+
+              <div className="mt-2 text-4xl md:text-5xl font-extrabold text-white/65">
+                Keep human judgment.
+              </div>
+
+              <p className="mt-6 text-white/70 leading-relaxed">
+                Strategy Lab does not remove the trader's responsibility. It moves
+                repeatable operational tasks into technology so the trader can
+                concentrate more deliberately on oversight, risk, participation,
+                and how the system is used.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -210,30 +290,27 @@ export default function StrategyLab() {
       ======================= */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-16">
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
                 Linked Strategy Control
               </p>
 
               <h2 className="mt-4 text-3xl md:text-5xl font-extrabold">
-                Control many strategies like one system.
+                Manage many strategies like one environment.
               </h2>
 
               <p className="mt-6 text-white/70 leading-relaxed">
-                When strategies are linked to the Strategy Lab, the global
-                controls can coordinate behavior across the entire group.
+                When strategies are linked to Strategy Lab, global controls can
+                coordinate defined behavior across the group without requiring
+                the trader to change each strategy individually.
               </p>
 
               <div className="mt-8 space-y-5">
-
                 <div className="flex gap-4">
                   <div className="mt-1 rounded-lg bg-orange-500/10 p-2 text-orange-400">
                     <PauseCircle size={20} />
                   </div>
-
                   <div>
                     <h3 className="font-bold">Running / Paused</h3>
                     <p className="mt-1 text-sm text-white/60">
@@ -247,13 +324,12 @@ export default function StrategyLab() {
                   <div className="mt-1 rounded-lg bg-orange-500/10 p-2 text-orange-400">
                     <SlidersHorizontal size={20} />
                   </div>
-
                   <div>
                     <h3 className="font-bold">
                       Both / Long Only / Short Only
                     </h3>
                     <p className="mt-1 text-sm text-white/60">
-                      Apply a common directional bias across all linked DTB
+                      Apply a common permitted direction across linked DTB
                       strategies.
                     </p>
                   </div>
@@ -263,12 +339,11 @@ export default function StrategyLab() {
                   <div className="mt-1 rounded-lg bg-orange-500/10 p-2 text-orange-400">
                     <Layers size={20} />
                   </div>
-
                   <div>
                     <h3 className="font-bold">Position Sync</h3>
                     <p className="mt-1 text-sm text-white/60">
-                      Synchronize linked strategies so the group respects a
-                      common directional position state.
+                      Synchronize linked strategies so the group respects a common
+                      directional position state.
                     </p>
                   </div>
                 </div>
@@ -277,40 +352,36 @@ export default function StrategyLab() {
                   <div className="mt-1 rounded-lg bg-orange-500/10 p-2 text-orange-400">
                     <Shield size={20} />
                   </div>
-
                   <div>
                     <h3 className="font-bold">Exit All</h3>
                     <p className="mt-1 text-sm text-white/60">
-                      Use the Strategy Lab's countdown control to exit positions
-                      across all linked strategies.
+                      Use Strategy Lab's countdown control to exit positions across
+                      linked strategies.
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
 
             <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-white/5 p-8 md:p-10">
-
               <div className="text-sm font-semibold text-orange-300">
-                THE POWER OF CENTRALIZED CONTROL
+                CENTRALIZED CONTROL
               </div>
 
               <div className="mt-6 text-5xl font-extrabold">
-                One Click
+                One Interface
               </div>
 
               <p className="mt-4 text-lg text-white/70 leading-relaxed">
                 Pause multiple strategies. Change their permitted direction.
-                Resume them. Synchronize them. Or exit linked positions.
+                Resume them. Synchronize them. Monitor them. Or exit linked
+                positions.
               </p>
 
               <p className="mt-5 text-white/60 leading-relaxed">
-                The Strategy Lab turns a collection of automated strategies into
-                a coordinated trading environment that can be managed from one
-                place.
+                Strategy Lab turns a collection of automated strategies into a
+                coordinated environment that can be overseen from one place.
               </p>
-
             </div>
           </div>
         </div>
@@ -321,7 +392,6 @@ export default function StrategyLab() {
       ======================= */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-5xl px-4 py-16">
-
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
               See It In Action
@@ -331,9 +401,10 @@ export default function StrategyLab() {
               Watch the DTB Strategy Lab Walkthrough
             </h2>
 
-            <p className="mt-4 mx-auto max-w-2xl text-white/65">
+            <p className="mt-4 mx-auto max-w-2xl text-white/65 leading-7">
               See how templates are launched, linked strategies are controlled,
-              positions are monitored, and global controls are applied.
+              strategy information is monitored, and global controls are applied
+              from one interface.
             </p>
           </div>
 
@@ -343,10 +414,18 @@ export default function StrategyLab() {
               src="https://www.youtube.com/embed/N0qH4GNbpGc"
               title="DTB Strategy Lab Walkthrough"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
           </div>
 
+          <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p className="text-xs md:text-sm text-white/55 leading-6">
+              Automated trading does not eliminate market risk. Strategy Lab is a
+              management and control environment for DTB strategies and does not
+              guarantee profitable trades or future trading performance.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -355,13 +434,15 @@ export default function StrategyLab() {
       ======================= */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-16">
+          <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+            The operating workflow
+          </p>
 
-          <h2 className="text-center text-3xl md:text-4xl font-bold">
-            From Template to Live Strategy
+          <h2 className="mt-3 text-center text-3xl md:text-4xl font-bold">
+            From Template to Managed Strategy
           </h2>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-5">
-
             {[
               {
                 step: "01",
@@ -371,12 +452,12 @@ export default function StrategyLab() {
               {
                 step: "02",
                 title: "Configure",
-                text: "Choose account, chart or chartless deployment, and linked controls.",
+                text: "Choose the account, chart or chartless deployment, and linked controls.",
               },
               {
                 step: "03",
                 title: "Launch",
-                text: "Batch launch the selected templates into NinjaTrader.",
+                text: "Batch launch selected templates into NinjaTrader.",
               },
               {
                 step: "04",
@@ -391,17 +472,20 @@ export default function StrategyLab() {
                 <div className="text-sm font-bold text-orange-400">
                   {item.step}
                 </div>
-
-                <h3 className="mt-3 text-xl font-bold">
-                  {item.title}
-                </h3>
-
+                <h3 className="mt-3 text-xl font-bold">{item.title}</h3>
                 <p className="mt-3 text-sm text-white/60 leading-relaxed">
                   {item.text}
                 </p>
               </div>
             ))}
+          </div>
 
+          <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-7 md:p-8">
+            <p className="text-center text-lg text-white/75 leading-8">
+              The goal is not to remove the trader. It is to remove unnecessary
+              operational burden so the trader can increasingly act as the manager
+              of the environment rather than the machinery inside it.
+            </p>
           </div>
         </div>
       </section>
@@ -411,21 +495,72 @@ export default function StrategyLab() {
       ======================= */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-5xl px-4 py-16">
-
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12 text-center">
-
             <h2 className="text-3xl md:text-4xl font-bold">
-              Set It Up. Then Let It Run.
+              Configure It. Launch It. Manage It When Needed.
             </h2>
 
             <p className="mt-6 mx-auto max-w-3xl text-lg text-white/70 leading-relaxed">
-              Once your strategies are configured and enabled, the Strategy Lab
-              does not need to remain open. Your strategies can continue running
-              in NinjaTrader — including chartless strategies — while the
-              Strategy Lab can be reopened whenever you want centralized control
-              and monitoring again.
+              Once strategies are configured and enabled, Strategy Lab does not
+              need to remain open. Strategies can continue running in NinjaTrader,
+              including chartless strategies, while Strategy Lab can be reopened
+              whenever you want centralized control and monitoring again.
             </p>
+          </div>
+        </div>
+      </section>
 
+      {/* =======================
+          PHILOSOPHY BRIDGE
+      ======================= */}
+      <section className="border-b border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+                Why Strategy Lab exists
+              </p>
+
+              <h2 className="mt-4 text-3xl md:text-5xl font-extrabold">
+                This is the DTB philosophy made operational.
+              </h2>
+
+              <p className="mt-6 text-white/70 leading-8">
+                The DTB approach is not simply about adding automation to a
+                conventional trading workflow. It is about deciding which work
+                should belong to technology and which decisions should remain
+                with the trader.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {[
+                {
+                  label: "Structure",
+                  text: "Organize market information around defined DTB structure rather than asking the trader to interpret everything from scratch.",
+                },
+                {
+                  label: "Automation",
+                  text: "Move repeatable setup, execution, and coordination tasks into technology where appropriate.",
+                },
+                {
+                  label: "Management",
+                  text: "Keep the trader focused on oversight, risk, participation, and how the environment is used.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5"
+                >
+                  <div className="font-semibold text-orange-300">
+                    {item.label}
+                  </div>
+                  <p className="mt-2 text-sm text-white/65 leading-6">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -435,15 +570,14 @@ export default function StrategyLab() {
       ======================= */}
       <section>
         <div className="mx-auto max-w-5xl px-4 py-20 text-center">
-
           <h2 className="text-4xl md:text-5xl font-extrabold">
-            This is what an integrated trading system looks like.
+            The machine handles repetition. You develop oversight.
           </h2>
 
-          <p className="mt-6 mx-auto max-w-3xl text-lg text-white/70">
-            DTB Strategy Lab connects the strategies, templates, accounts,
-            controls, and live monitoring tools that make the DTB ecosystem
-            operate as one coordinated system.
+          <p className="mt-6 mx-auto max-w-3xl text-lg text-white/70 leading-8">
+            Strategy Lab brings DTB strategies, templates, accounts, controls, and
+            monitoring together so you can experience trading as a managed
+            environment rather than a collection of disconnected tasks.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
@@ -451,8 +585,15 @@ export default function StrategyLab() {
               to="/jumpstart"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-dtb px-7 py-4 font-semibold hover:bg-dtb-hover"
             >
-              Explore Jump Start
+              Start the 30-Day Evaluation
               <ArrowRight size={18} />
+            </Link>
+
+            <Link
+              to="/ebook"
+              className="inline-flex items-center justify-center rounded-xl border border-white/15 px-7 py-4 font-semibold hover:bg-white/5"
+            >
+              Read the Free eBook
             </Link>
 
             <Link
@@ -470,16 +611,16 @@ export default function StrategyLab() {
             </div>
 
             <p className="mt-3 text-xs text-white/55 leading-relaxed">
-              Futures trading involves substantial risk and is not suitable for
-              every investor. Automated trading systems do not eliminate market
-              risk. Past performance is not necessarily indicative of future
-              results.
+              Futures trading involves substantial risk of loss and is not
+              suitable for every investor. You may lose all or more than your
+              initial investment. Automated trading systems and management tools
+              do not eliminate market risk or guarantee outcomes. Only risk
+              capital should be used for trading. Past performance is not
+              necessarily indicative of future results.
             </p>
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }

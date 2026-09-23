@@ -145,16 +145,17 @@ export default function Home() {
         className="mx-auto max-w-6xl px-4 py-16"
       >
         <p className="text-sm text-white/60">
-          Trade by Management Futures Trading System
+          A Different Operating Model for Retail Futures Trading
         </p>
 
         <h1 className="mt-3 text-4xl md:text-6xl font-extrabold tracking-tight">
-          A complete trading system — not just indicators.
+          Retail trading puts the trader in the wrong role. DTB changes the structure.
         </h1>
 
         <p className="mt-5 max-w-2xl text-lg text-white/70">
-          DTB Traders delivers integrated strategies, indicators, and execution
-          workflows engineered to work together as one system.
+          DTB combines price structure, automation, risk management, and execution
+          into one integrated trading environment - so technology handles repetitive
+          work while you develop the judgement to manage the system.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -162,7 +163,7 @@ export default function Home() {
             to="/jumpstart"
             className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
           >
-            Get Instant Access <ArrowRight size={18} />
+            Explore Jump Start <ArrowRight size={18} />
           </Link>
 
           <Link
@@ -176,7 +177,7 @@ export default function Home() {
             href="#system"
             className="rounded-xl border border-white/15 px-6 py-3 font-semibold text-white/90 hover:bg-white/5 inline-flex items-center justify-center gap-2"
           >
-            See how it works <ExternalLink size={18} />
+            See How DTB Works <ExternalLink size={18} />
           </a>
 
           <a
@@ -191,9 +192,18 @@ export default function Home() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { title: "Rules-based", text: "Designed to remove emotion." },
-            { title: "Integrated", text: "Built as one coherent system." },
-            { title: "Repeatable", text: "Consistency over hype." },
+            {
+              title: "Structured",
+              text: "Price organized around participation and defined market structure.",
+            },
+            {
+              title: "Automated",
+              text: "Technology handles repetitive execution, monitoring, and calculation.",
+            },
+            {
+              title: "Managed",
+              text: "The trader develops from operator to manager, focusing on risk, oversight, and judgement.",
+            },
           ].map((x) => (
             <div
               key={x.title}
@@ -223,21 +233,22 @@ export default function Home() {
               </h2>
 
               <p className="mt-5 max-w-2xl text-lg text-white/75">
-                This guide explains why.
+                Retail Trading Is Broken - And Here's the Proof
               </p>
 
               <p className="mt-4 max-w-2xl text-white/70 leading-relaxed">
-                Not more strategies. Not more indicators. Just a clear
-                explanation of what’s actually going on — and why things haven’t
-                worked the way you expected.
+                A plain-English guide to why retail trading becomes unnecessarily
+                difficult, why more indicators and more effort can make the problem
+                worse, and what changes when price, automation, and the role of the
+                trader are structured differently.
               </p>
 
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  "Why effort alone makes trading feel heavier",
-                  "Why time-based charts create confusion and false signals",
-                  "Why most trading education keeps you stuck in interpretation",
-                  "What actually needs to change before results can stabilize",
+                  "Why complexity often increases as traders add more tools and decisions",
+                  "How time-based charts can increase interpretation and cognitive load",
+                  "Why the trading environment can matter as much as trader discipline",
+                  "How structure, automation, and management can change the trader's role",
                 ].map((item) => (
                   <div
                     key={item}
@@ -257,7 +268,7 @@ export default function Home() {
                   to="/ebook"
                   className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
                 >
-                  Get the Free eBook <ArrowRight size={18} />
+                  Read the Free eBook <ArrowRight size={18} />
                 </Link>
 
                 <Link
@@ -301,29 +312,66 @@ export default function Home() {
       ======================= */}
       <section id="system" className="border-t border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Why DTB Traders is different
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
+            Change the Trading Environment
+          </p>
+
+          <h2 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+            DTB is built around a different role for the trader.
           </h2>
 
-          <p className="mt-4 max-w-2xl text-white/70">
-            Most trading systems are a pile of disconnected indicators. DTB
-            Traders is a fully integrated, institutional-grade trading system
-            engineered as one coherent machine.
+          <p className="mt-5 max-w-3xl text-lg text-white/70 leading-relaxed">
+            Traditional retail trading asks the trader to interpret, monitor, calculate,
+            execute, and manage almost everything manually. DTB is designed to move
+            repetitive work into technology and leave the trader focused on oversight,
+            risk, and judgement.
           </p>
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-white/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 bg-white/5">
+              <div className="border-b border-white/10 p-5 md:border-b-0 md:border-r">
+                <div className="text-sm font-semibold uppercase tracking-wide text-white/50">
+                  Traditional Retail Approach
+                </div>
+              </div>
+              <div className="p-5">
+                <div className="text-sm font-semibold uppercase tracking-wide text-orange-300">
+                  DTB Approach
+                </div>
+              </div>
+            </div>
+
+            {[
+              ["Time organizes price", "Participation helps organize price"],
+              ["Trader interprets everything", "Defined structure reduces unnecessary interpretation"],
+              ["Trader performs repetitive tasks", "Automation handles repeatable work"],
+              ["Trader operates the machinery", "Trader manages the system"],
+            ].map(([traditional, dtb]) => (
+              <div
+                key={traditional}
+                className="grid grid-cols-1 md:grid-cols-2 border-t border-white/10"
+              >
+                <div className="p-5 text-white/60 md:border-r md:border-white/10">
+                  {traditional}
+                </div>
+                <div className="p-5 font-semibold text-white/90">{dtb}</div>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Integrated System",
-                text: "Strategies, indicators, and execution logic designed together as one unified system.",
+                title: "Structured",
+                text: "A coherent framework for organizing price, market information, and trading decisions.",
               },
               {
-                title: "Rules-Based Automation",
-                text: "No discretion. No emotions. Pure rules-based execution.",
+                title: "Automated",
+                text: "Rules-based tools handle repetitive execution, monitoring, and calculation without pretending risk disappears.",
               },
               {
-                title: "Built for Scale",
-                text: "Designed to scale from small accounts to serious capital deployment.",
+                title: "Built for Real Life",
+                text: "Designed for people who want trading to coexist with a career, business, family, and life away from the screen.",
               },
             ].map((item) => (
               <div
@@ -331,7 +379,7 @@ export default function Home() {
                 className="rounded-2xl border border-white/10 bg-white/5 p-6"
               >
                 <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="mt-2 text-white/70 text-sm">{item.text}</p>
+                <p className="mt-2 text-white/70 text-sm leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
@@ -348,27 +396,28 @@ export default function Home() {
           </h2>
 
           <p className="mt-4 max-w-3xl text-white/70">
-            DTB Traders is built as a complete trading stack. Every component is
-            engineered to work together — not bolted on from different vendors.
+            The value is not the number of tools. It is that the strategies, bar
+            types, indicators, execution logic, risk controls, and management tools
+            are designed to operate together as one environment.
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 title: "Automated Trading Strategies",
-                text: "Rules-based strategies designed for consistency and repeatability.",
+                text: "Rules-based strategies designed to automate repeatable trading logic and reduce manual execution workload.",
               },
               {
                 title: "Advanced Bar Types",
-                text: "Custom bar constructions engineered to reduce noise and reveal market structure.",
+                text: "Purpose-built bar constructions that organize price around defined participation and structural concepts.",
               },
               {
                 title: "Proprietary Indicators",
-                text: "Purpose-built indicators created specifically for DTB strategies.",
+                text: "Purpose-built tools designed around the same structural framework used by DTB strategies.",
               },
               {
                 title: "Execution Engine",
-                text: "Precise, automated execution logic that removes emotion and human error.",
+                text: "Automated execution logic that handles repetitive actions consistently while the trader remains responsible for oversight and risk.",
               },
               {
                 title: "Risk & Trade Management",
@@ -392,6 +441,65 @@ export default function Home() {
       </section>
 
       {/* =======================
+          STRATEGY LAB
+      ======================= */}
+      <section className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-semibold text-orange-300">
+                <Zap size={16} />
+                Centralized Strategy Control
+              </div>
+
+              <h2 className="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight">
+                DTB Strategy Lab - your trading control center.
+              </h2>
+
+              <p className="mt-5 text-lg text-white/70 leading-relaxed">
+                Launch, monitor, pause, resume, and manage multiple DTB strategies
+                from one centralized interface instead of manually building and
+                maintaining a screen full of separate strategy charts.
+              </p>
+
+              <p className="mt-4 text-white/65 leading-relaxed">
+                Strategy Lab brings templates, accounts, live strategy status, PnL,
+                direction controls, synchronization, and account-level controls into
+                one operating layer. The machine handles repetition. You develop oversight.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/strategy-lab"
+                  className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
+                >
+                  Explore DTB Strategy Lab <ArrowRight size={18} />
+                </Link>
+                <Link
+                  to="/jumpstart"
+                  className="rounded-xl border border-white/15 px-6 py-3 font-semibold hover:bg-white/5 inline-flex items-center justify-center gap-2"
+                >
+                  Explore Jump Start
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-white/5 p-8 md:p-10">
+              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-300">
+                One Interface. Multiple Strategies.
+              </div>
+              <div className="mt-6 text-4xl font-extrabold">Manage the system.</div>
+              <p className="mt-4 text-white/70 leading-relaxed">
+                Move beyond operating every strategy individually. Strategy Lab is
+                designed to make a collection of automated strategies easier to
+                supervise as one coordinated trading environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =======================
           RESULTS & PROOF
       ======================= */}
       <section id="results" className="border-t border-white/10">
@@ -399,12 +507,13 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Real Activity. Real Outcomes.
+                Evaluate the Process - Not a Perfect Screenshot.
               </h2>
               <p className="mt-4 max-w-3xl text-white/70">
-                DTB Traders is built around transparency, repeatable process,
-                and real-time visibility — not selective screenshots, hindsight,
-                or backtest-style hype.
+                DTB has been used in an active trading community where strategy
+                activity, winning outcomes, losing outcomes, and the operating process
+                can be observed. We believe a trading system should be evaluated as a
+                process, not from a collection of perfect screenshots.
               </p>
             </div>
 
@@ -424,14 +533,14 @@ export default function Home() {
                 note: "Captured from live group activity",
               },
               {
-                kpi: "Winning Outcomes",
-                value: "1,500+",
-                note: "Documented profit-based result posts",
+                kpi: "Wins + Losses",
+                value: "Visible",
+                note: "Outcomes are not presented as if every trade wins",
               },
               {
-                kpi: "Loss Transparency",
-                value: "Fully Visible",
-                note: "Both wins and losses are shared openly",
+                kpi: "Process Visibility",
+                value: "Transparent",
+                note: "Focus on the operating process, not isolated highlights",
               },
               {
                 kpi: "Environment",
@@ -454,16 +563,15 @@ export default function Home() {
 
           <div className="mt-10 max-w-3xl">
             <p className="text-white/75 leading-8">
-              Unlike most trading systems that rely on selective screenshots or
-              polished backtested performance, DTB Traders operates in a
-              transparent, real-time environment where both winning and losing
-              outcomes are visible.
+              DTB is not presented as a promise that every strategy, trade, or day
+              will be profitable. The objective is to make the operating process
+              visible enough to be observed, questioned, and evaluated.
             </p>
 
             <p className="mt-4 text-white/70 leading-8">
-              The focus is not on pretending every day is perfect. It is on
-              building a structured, repeatable process that can be observed,
-              evaluated, and improved over time.
+              The focus is a structured, repeatable environment that can be
+              understood and managed over time. Past activity does not guarantee
+              future results, and trading risk remains with the trader.
             </p>
           </div>
 
@@ -491,12 +599,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Start Trading with a Structured, Fully Integrated System
+                Experience the Complete DTB Trading Environment
               </h2>
               <p className="mt-4 max-w-3xl text-white/70">
-                Get immediate access to the complete DTB Traders system —
-                strategies, indicators, execution logic, onboarding, and ongoing
-                updates — all designed to work together as one system.
+                Your first month is designed as an evaluation. Get the environment
+                operational, learn how DTB structures price, explore Strategy Lab,
+                observe the automation, and decide whether this way of trading fits you.
               </p>
             </div>
 
@@ -520,19 +628,18 @@ export default function Home() {
               </div>
 
               <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300">
-                30-Day Risk-Free Start
+                30-Day Complimentary Evaluation
               </div>
 
               <h3 className="mt-6 text-2xl md:text-3xl font-extrabold tracking-tight">
-                Get full access immediately. Cancel within the first 30 days if
-                it’s not right for you.
+                Get operational. Learn the environment. Then decide whether DTB fits you.
               </h3>
 
               <p className="mt-4 text-sm text-white/70 leading-relaxed">
-                Register with your payment details today and unlock the full DTB
-                Traders system right away. If you decide within the first 30
-                days that it’s not the right fit, you can cancel during that
-                period.
+                Register today and unlock the DTB environment immediately. Use the
+                first month to work through onboarding, run the provided strategies,
+                learn the structural framework, explore Strategy Lab, and evaluate
+                whether DTB fits the way you want to trade.
               </p>
 
               <div className="mt-6 flex items-end gap-3">
@@ -553,14 +660,14 @@ export default function Home() {
 
                 <ul className="mt-4 space-y-3 text-sm text-white/75">
                   {[
-                    "Full DTB Trading System — strategies, indicators, and execution engine",
-                    "Structured onboarding to help you get operational quickly",
-                    "60+ proprietary indicators and automated strategies",
-                    "Advanced bar types engineered to reduce noise and reveal structure",
-                    "Rules-based execution framework designed to remove emotion",
-                    "Built-in risk management and trade filtering",
-                    "Ongoing system updates and performance-driven improvements",
-                    "Access to the DTB Traders community and live trading environment",
+                    "Complete DTB environment - strategies, structural tools, execution logic, and Strategy Lab",
+                    "Structured onboarding designed to help you become operational quickly",
+                    "Purpose-built automated strategies, indicators, and bar types designed to work together",
+                    "DTB Strategy Lab for centralized strategy launch, monitoring, and control",
+                    "Rules-based automation designed to handle repetitive execution tasks",
+                    "Built-in risk management, trade filtering, and account-level controls",
+                    "Ongoing system updates and product improvements",
+                    "Access to the DTB Traders community and active trading environment",
                   ].map((x) => (
                     <li key={x} className="flex items-start gap-2">
                       <Check
@@ -579,7 +686,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="mt-7 rounded-xl bg-dtb px-5 py-3 font-semibold hover:bg-dtb-hover text-center inline-flex items-center justify-center gap-2"
               >
-                Start Now — 30-Day Risk-Free Access <ArrowRight size={18} />
+                Start Your 30-Day Evaluation <ArrowRight size={18} />
               </a>
 
               <div className="mt-4 text-xs text-white/55 text-center leading-relaxed">
@@ -597,10 +704,10 @@ export default function Home() {
               </a>
 
               <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-white/55 leading-relaxed">
-                This is not another indicator pack or disconnected strategy
-                bundle. DTB Traders is built as a complete trading system
-                designed for structured, repeatable execution. Futures trading
-                involves risk and is not suitable for all investors.
+                DTB is not another indicator pack or disconnected strategy bundle.
+                It is an integrated trading environment designed around structure,
+                automation, and management. Automated trading does not eliminate
+                market risk, and futures trading is not suitable for all investors.
               </div>
             </div>
           </div>
@@ -650,10 +757,11 @@ export default function Home() {
               </p>
 
               <p>
-                The tools DTB Traders provide are designed to help you
-                understand the market and see what price is likely to do next;
-                however, you are ultimately responsible for how you make use of
-                them.
+                The tools DTB Traders provides are designed to help organize market
+                information, identify defined structure, and support systematic
+                participation. They do not predict future price movement or guarantee
+                trading outcomes. You remain responsible for how you use the tools,
+                position sizing, and risk management.
               </p>
 
               <p className="font-semibold text-white">
@@ -673,8 +781,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">FAQ</h2>
           <p className="mt-4 max-w-3xl text-white/70">
-            Quick answers to common questions. (We can tailor these to your
-            exact policies and platform.)
+            Straight answers about the DTB environment, platform, access, and risk.
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -747,11 +854,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
               <div>
                 <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                  Ready to trade with a real system?
+                  Ready to experience a different trading environment?
                 </h3>
                 <p className="mt-3 max-w-2xl text-white/70">
-                  Stop stitching together disconnected tools. Get a complete,
-                  integrated trading system designed for repeatable execution.
+                  Move from operating disconnected tools to managing one integrated
+                  environment built around structure, automation, and oversight.
                 </p>
 
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -759,7 +866,7 @@ export default function Home() {
                     to="/jumpstart"
                     className="rounded-xl bg-dtb px-6 py-3 font-semibold hover:bg-dtb-hover inline-flex items-center justify-center gap-2"
                   >
-                    Join Now <ArrowRight size={18} />
+                    Explore Jump Start <ArrowRight size={18} />
                   </Link>
 
                   <Link
@@ -789,8 +896,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-5 text-xs text-white/55">
-                  Primary CTA: Jump Start offer • Secondary CTA: Google
-                  onboarding form
+                  Start with the free eBook, explore the system, or begin your Jump Start evaluation.
                 </div>
               </div>
 

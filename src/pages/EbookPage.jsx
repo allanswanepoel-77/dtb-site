@@ -2,40 +2,37 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { useState } from "react";
 
-const GOOGLE_FORM_ACTION =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdn8nWUT_G9E6BVgcHHUt0i3Q64LWh78Kpk6bdRCgYHchvCeA/formResponse?embedded=true";
-
-const FIRST_NAME_ENTRY = "2005620554";
-const LAST_NAME_ENTRY = "763429133";
-const EMAIL_ENTRY = "1357125662";
-
 export default function EbookPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (submitting) return;
     setSubmitting(true);
-    setSubmitted(true);
+    setSubmitError("");
+    try {
+      const response = await fetch("/api/ebook-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email }),
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "Unable to submit your details.");
+      }
+      window.location.assign("/ebook-dtb-traders.pdf");
+    } catch (error) {
+      setSubmitError(error.message || "Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      <iframe
-        name="hiddenGoogleForm"
-        title="hiddenGoogleForm"
-        style={{ display: "none" }}
-        onLoad={() => {
-          if (submitted) {
-            setTimeout(() => {
-              window.location.href = "/ebook-dtb-traders.pdf";
-            }, 2000);
-          }
-        }}
-      />
-
       <div className="mx-auto max-w-6xl px-4 py-16">
         {/* HERO */}
         <motion.div
@@ -114,15 +111,12 @@ export default function EbookPage() {
               </p>
 
               <form
-                action={GOOGLE_FORM_ACTION}
-                method="POST"
-                target="hiddenGoogleForm"
                 onSubmit={handleSubmit}
                 className="mt-6 space-y-4"
               >
                 <input
                   type="text"
-                  name={`entry.${FIRST_NAME_ENTRY}`}
+                  
                   placeholder="First Name"
                   required
                   value={firstName}
@@ -132,7 +126,7 @@ export default function EbookPage() {
 
                 <input
                   type="text"
-                  name={`entry.${LAST_NAME_ENTRY}`}
+                  
                   placeholder="Last Name"
                   required
                   value={lastName}
@@ -142,7 +136,7 @@ export default function EbookPage() {
 
                 <input
                   type="email"
-                  name={`entry.${EMAIL_ENTRY}`}
+                  
                   placeholder="Email Address"
                   required
                   value={email}
@@ -150,13 +144,11 @@ export default function EbookPage() {
                   className="w-full p-3 rounded-xl bg-slate-900 border border-white/10"
                 />
 
-                <input type="hidden" name="fvv" value="1" />
-                <input type="hidden" name="pageHistory" value="0" />
-                <input
-                  type="hidden"
-                  name="fbzx"
-                  value="-4501908059688706340"
-                />
+                {submitError && (
+                  <p role="alert" className="text-sm text-red-300">
+                    {submitError}
+                  </p>
+                )}
 
                 <button
                   type="submit"

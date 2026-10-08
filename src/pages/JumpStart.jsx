@@ -275,7 +275,7 @@ export default function JumpStart() {
               </p>
 
               <div className="mt-6 flex items-end gap-3">
-                <div className="text-4xl font-bold">$399</div>
+                <div className="text-4xl font-bold">$599</div>
                 <div className="pb-1 text-sm text-white/60">
                   total for 7 months access
                 </div>

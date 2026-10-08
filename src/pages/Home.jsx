@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 // ✅ Logo
 import logo from "../assets/brand/dtb-logo.png";
 
-const STRIPE_LINK = "https://buy.stripe.com/4gMeVe4qb1BQ6zH5ka1sQ0j";
+const STRIPE_LINK = "https://buy.stripe.com/bJe7sM2i31BQe2913U1sQ0p";
 const FORM_LINK = "https://forms.gle/95kqNiQ6q6CQ3Trg9";
 const DISCORD_LINK = "https://discord.gg/kzYXadT7pA";
 

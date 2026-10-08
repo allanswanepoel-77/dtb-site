@@ -1,7 +1,7 @@
 import { ArrowRight, Check, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const STRIPE_LINK = "https://buy.stripe.com/4gMeVe4qb1BQ6zH5ka1sQ0j";
+const STRIPE_LINK = "https://buy.stripe.com/bJe7sM2i31BQe2913U1sQ0p";
 const FORM_LINK = "https://forms.gle/95kqNiQ6q6CQ3Trg9";
 
 export default function JumpStart() {

@@ -2,7 +2,6 @@ import { ArrowRight, Check, Shield, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const STRIPE_LINK = "https://buy.stripe.com/bJe7sM2i31BQe2913U1sQ0p";
-const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdn8nWUT_G9E6BVgcHHUt0i3Q64LWh78Kpk6bdRCgYHchvCeA/viewform?usp=header";
 
 export default function JumpStart() {
   return (
@@ -327,14 +326,7 @@ export default function JumpStart() {
                 complimentary 30-day period if you decide DTB is not for you.
               </div>
 
-              <a
-                href={FORM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 text-sm text-white/60 hover:text-white text-center"
-              >
-                Already registered? Complete the onboarding form <ArrowRight size={15} className="inline" />
-              </a>
+
 
               <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-white/55 leading-relaxed">
                 The 30-day evaluation is an opportunity to experience the DTB

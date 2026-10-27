@@ -13,7 +13,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // ✅ Logo
-import logo from "../assets/brand/dtb-logo.png";
 
 const STRIPE_LINK = "https://buy.stripe.com/bJe7sM2i31BQe2913U1sQ0p";
 const FORM_LINK = "https://forms.gle/95kqNiQ6q6CQ3Trg9";
@@ -50,91 +49,8 @@ function FaqItem({ q, a }) {
 export default function Home() {
   const year = new Date().getFullYear();
 
-  const openMemberstackModal = async (modalType) => {
-  if (window.$memberstackDom) {
-    await window.$memberstackDom.openModal(modalType);
-
-    const member = await window.$memberstackDom.getCurrentMember();
-
-    if (member?.data) {
-      window.location.href = "/member";
-    }
-  } else {
-    console.error("Memberstack has not loaded yet.");
-  }
-};
-
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      {/* =======================
-          TOP NAV
-      ======================= */}
-      <header className="border-b border-white/10">
-        {/* Row 1: Logo + Nav */}
-        <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="inline-flex items-center">
-            <img src={logo} alt="DTB Traders" className="h-24 w-auto" />
-          </Link>
-
-          <nav className="text-sm text-white/70 hidden md:flex gap-6">
-            <a className="hover:text-white" href="#system">
-              System
-            </a>
-            <Link className="hover:text-white" to="/ebook">
-              Free eBook
-            </Link>
-            <a className="hover:text-white" href="#components">
-              Components
-            </a>
-            <Link className="hover:text-white" to="/strategy-lab">
-              DTB Strategy Lab
-            </Link>
-            <a className="hover:text-white" href="#results">
-              Results
-            </a>
-            <Link className="hover:text-white" to="/jumpstart">
-              Jump Start
-            </Link>
-            <Link className="hover:text-white" to="/resources">
-              Resources
-            </Link>
-            <a className="hover:text-white" href="#risk-disclosure">
-              Risk Disclosure
-            </a>
-            <a className="hover:text-white" href="#faq">
-              FAQ
-            </a>
-          </nav>
-        </div>
-
-        {/* Row 2: Member Actions */}
-        <div className="mx-auto max-w-6xl px-4 pb-6 pt-2 flex justify-end border-t border-white/5">
-          <div className="flex flex-col sm:flex-row gap-3">
-            <button
-              type="button"
-              onClick={() => openMemberstackModal("LOGIN")}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold hover:bg-white/5"
-            >
-              Member Login
-            </button>
-
-            <Link
-              to="/ebook"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold hover:bg-white/5"
-            >
-              Free eBook <BookOpen size={18} />
-            </Link>
-
-            <Link
-              to="/jumpstart"
-              className="inline-flex items-center gap-2 rounded-xl bg-dtb px-6 py-3 text-sm font-semibold hover:bg-dtb-hover"
-            >
-              Join Now <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </header>
-
       {/* =======================
           HERO
       ======================= */}

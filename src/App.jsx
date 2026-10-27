@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+import Navbar from "./components/Navbar.jsx";
 import EbookPage from "./pages/EbookPage";
 import StrategyLab from "./pages/StrategyLab";
 import JumpStart from "./pages/JumpStart";
@@ -8,13 +9,16 @@ import Resources from "./pages/Resources";
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <Navbar />
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/ebook" element={<EbookPage />} />
       <Route path="/strategy-lab" element={<StrategyLab />} />
       <Route path="/jumpstart" element={<JumpStart />} />
       <Route path="/member" element={<Member />} />
       <Route path="/resources" element={<Resources />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }

@@ -434,10 +434,10 @@ export default function Home() {
             </div>
 
             <Link
-              to="/jumpstart"
+              to="/results"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-dtb px-5 py-3 font-semibold hover:bg-dtb-hover"
             >
-              See offer <ArrowRight size={18} />
+              Browse results <ArrowRight size={18} />
             </Link>
           </div>
 
@@ -831,9 +831,9 @@ export default function Home() {
                   <Link className="hover:text-white" to="/strategy-lab">
                     DTB Strategy Lab
                   </Link>
-                  <a className="hover:text-white" href="#results">
+                  <Link className="hover:text-white" to="/results">
                     Results
-                  </a>
+                  </Link>
                   <Link className="hover:text-white" to="/jumpstart">
                     Jump Start
                   </Link>

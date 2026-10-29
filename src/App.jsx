@@ -6,6 +6,7 @@ import StrategyLab from "./pages/StrategyLab";
 import JumpStart from "./pages/JumpStart";
 import Member from "./pages/Member";
 import Resources from "./pages/Resources";
+import Results from "./pages/Results";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/jumpstart" element={<JumpStart />} />
       <Route path="/member" element={<Member />} />
       <Route path="/resources" element={<Resources />} />
+      <Route path="/results" element={<Results />} />
       </Routes>
     </>
   );

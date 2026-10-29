@@ -9,7 +9,7 @@ const links = [
   { label: "Free eBook", to: "/ebook" },
   { label: "Components", to: "/#components" },
   { label: "DTB Strategy Lab", to: "/strategy-lab" },
-  { label: "Results", to: "/#results" },
+  { label: "Results", to: "/results" },
   { label: "Jump Start", to: "/jumpstart" },
   { label: "Resources", to: "/resources" },
   { label: "Risk Disclosure", to: "/#risk-disclosure" },
